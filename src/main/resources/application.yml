@@ -2,8 +2,11 @@ micronaut:
   application:
     name: freteZup
 
+# https://docs.micronaut.io/1.3.0.M1/api/io/micronaut/management/endpoint/health/DetailsVisibility.html
+# DETAILS-VISIBLE -> VOC PODE FAZER COM QUE SO USUARIOS AUTENTICADOS CONSIGAM LER OD DETALHES
+# ANONYMOUS -> GERAL VE, AUTHENTICATED -> SOMENTE AUTENTICADO, NEVER -> NUNCA MOSTRAR DETALHES
 endpoints:
   health:
-    details-visible: ANONYMOUS
+    details-visible: AUTHENTICATED
     enabled: true
     sensitive: false
