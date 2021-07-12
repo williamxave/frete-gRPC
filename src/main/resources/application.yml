@@ -1,3 +1,9 @@
 micronaut:
   application:
     name: freteZup
+
+endpoints:
+  health:
+    details-visible: ANONYMOUS
+    enabled: true
+    sensitive: false

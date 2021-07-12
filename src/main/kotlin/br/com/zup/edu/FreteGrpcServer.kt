@@ -49,9 +49,12 @@ class FreteGrpcServer : FreteZupServiceGrpc.FreteZupServiceImplBase() {
 
         //SIMULAR uma verificação de segurança
         if (cep.endsWith("333")) {
+
             val statusProto = com.google.rpc.Status.newBuilder()
                 .setCode(Code.PERMISSION_DENIED.number)
                 .setMessage("Usuário não pode acessar esse recurso")
+//                .addDetails(Any.pack(BadRequest.newBuilder()
+//                   .build()))
                 .addDetails(
                     Any.pack(
                         ErroDetails.newBuilder()
